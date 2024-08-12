@@ -5,7 +5,7 @@ const menuitems = [
     path: "/#home",
   },
   {
-    title: "Info",
+    title: "Información",
     path: "/#about",
   },
   {
@@ -21,17 +21,12 @@ const menuitems = [
     path: "/#contact",
   },
   {
-    title: "Blog",
-    path: "/blog",
-  },
-  {
     title: "Páginas",
     path: "javascript:void(0)",
     children: [
       { title: "About Page", path: "/about" },
       { title: "Pricing Page", path: "/pricing" },
       { title: "Contact Page", path: "/contact" },
-      { title: "Blog Grid Page", path: "/blog" },
       { title: "Sign Up Page", path: "/signup" },
       { title: "Sign In Page", path: "/signin" },
       { title: "404 Page", path: "/404" },
@@ -47,13 +42,13 @@ const menuitems = [
         <a href="/" class="navbar-logo block w-full py-5">
           {(Astro.url.pathname === '/') ? (
             <img
-              src="#"
+              src="/assets/logo/logo-white.svg"
               alt="logo"
               class="header-logo w-full"
             />
           ) : (
-            <img src="#" alt="logo" class="w-full dark:hidden" />
-            <img src="#" alt="logo" class="w-full hidden dark:block" />
+            <img src="/assets/logo/logo-white.svg" alt="logo" class="w-full dark:hidden" />
+            <img src="/assets/logo/logo-white.svg" alt="logo" class="w-full hidden dark:block" />
           )}
           
         </a>

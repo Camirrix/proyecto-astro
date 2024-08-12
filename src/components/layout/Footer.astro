@@ -1,16 +1,4 @@
 ---
-import { getCollection } from "astro:content";
-
-// Filter blog entries with 'draft: false' & date before current date
-const publishedBlogEntries = await getCollection("blog", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
-
-// Sort content entries by publication date
-publishedBlogEntries.sort(function (a, b) {
-  return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
-});
-
 const footerLinks = [
   {
     header: 'Sobre nosotros',
@@ -21,7 +9,7 @@ const footerLinks = [
         isExternal: false,
       },
       {
-        name: 'Features',
+        name: 'Características',
         href: '/',
         isExternal: false,
       },
@@ -66,23 +54,23 @@ const footerLinks = [
     header: 'Nuestros productos',
     links: [
       {
-        name: 'Lineicons',
-        href: 'https://lineicons.com/',
+        name: 'Citas',
+        href: '/',
         isExternal: true,
       },
       {
-        name: 'TailAdmin',
-        href: 'https://tailadmin.com/',
+        name: 'Historiales médicos',
+        href: '/',
         isExternal: true,
       },
       {
-        name: 'TailGrids',
-        href: 'https://tailgrids.com/',
+        name: 'Ambulancia',
+        href: '/',
         isExternal: true,
       },
       {
-        name: 'UIdeck',
-        href: 'https://uideck.com/',
+        name: 'Recordatorio de chequeo',
+        href: '/',
         isExternal: true,
       },
     ],
@@ -101,7 +89,7 @@ const footerLinks = [
 >
   <div class="container">
     <div class="-mx-4 flex flex-wrap">
-      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12">
+      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-3/12">
         <div class="mb-10 w-full">
           <a
             href="/"
@@ -152,7 +140,7 @@ const footerLinks = [
           </div>
         </div>
       </div>
-      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
+      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-3/12">
         <div class="mb-10 w-full">
           <h4 class="mb-9 text-lg font-semibold text-white">{footerLinks[0].header}</h4>
           <ul>
@@ -175,7 +163,7 @@ const footerLinks = [
           </ul>
         </div>
       </div>
-      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-3/12">
         <div class="mb-10 w-full">
           <h4 class="mb-9 text-lg font-semibold text-white">{footerLinks[1].header}</h4>
           <ul>
@@ -198,7 +186,7 @@ const footerLinks = [
           </ul>
         </div>
       </div>
-      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-3/12">
         <div class="mb-10 w-full">
           <h4 class="mb-9 text-lg font-semibold text-white">{footerLinks[2].header}</h4>
           <ul>
@@ -220,31 +208,6 @@ const footerLinks = [
             })}
           </ul>
         </div>
-      </div>
-      <div class="w-full px-4 md:w-2/3 lg:w-6/12 xl:w-3/12">
-        <div class="mb-10 w-full">
-          <h4 class="mb-9 text-lg font-semibold text-white">{footerLinks[3].header}</h4>
-          <ul class="flex flex-col gap-8">
-            {
-              publishedBlogEntries.slice(0, 2).map((blogPostEntry, index) => (
-                <li>
-                  <a class="group flex items-center gap-[22px]" href={`/blog/${blogPostEntry.slug}`}>
-                    <div class="overflow-hidden rounded max-w-[70px] w-full max-h-12 h-full">
-                      <img
-                        src={blogPostEntry.data.image.src}
-                        alt={blogPostEntry.data.image.alt}
-                      />
-                    </div>
-                    <span class="max-w-[180px] text-gray-7 text-base group-hover:text-white">
-                      {blogPostEntry.data.title.slice(0, 35)} ...
-                    </span>
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -260,19 +223,19 @@ const footerLinks = [
                 href="javascript:void(0)"
                 class="px-3 text-base text-gray-7 hover:text-white hover:underline"
               >
-                Privacy policy
+                Políticas de privacidad
               </a>
               <a
                 href="javascript:void(0)"
                 class="px-3 text-base text-gray-7 hover:text-white hover:underline"
               >
-                Legal notice
+                Avisos legales
               </a>
               <a
                 href="javascript:void(0)"
                 class="px-3 text-base text-gray-7 hover:text-white hover:underline"
               >
-                Terms of service
+                Terminos de servicio
               </a>
             </div>
           </div>
